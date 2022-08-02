@@ -1,0 +1,324 @@
+<html lang="en"><head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+
+  <title>CodePen - Landing Page Design</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  
+<style>
+body {
+  background: #2B2B2B;
+  font-family: Lato, sans-serif;
+}
+
+nav {
+  height: 50px;
+  background: #333333;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  z-index: -2;
+  position: relative;
+}
+nav ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+nav ul li {
+  margin-right: 30px;
+  color: #ffffff;
+}
+nav ul li:last-child {
+  margin-right: 0px;
+}
+nav .logo {
+  height: 50px;
+  width: 75px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  margin-right: 30px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+nav .arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #fff;
+}
+
+.banner {
+  height: auto;
+  margin: 32px 0px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .banner {
+    height: 450px;
+    margin-bottom: 32px;
+  }
+}
+.banner .banner-image {
+  position: absolute;
+  opacity: 0.25;
+  right: 0px;
+  top: 0px;
+  height: 300px;
+  z-index: -1;
+  filter: drop-shadow(0 3rem 0.05rem #686868);
+}
+@media (min-width: 768px) {
+  .banner .banner-image {
+    display: inherit;
+    height: 400px;
+    top: 0px;
+    opacity: 0.5;
+  }
+}
+@media (min-width: 992px) {
+  .banner .banner-image {
+    height: 500px;
+    top: -50px;
+    opacity: 1;
+  }
+}
+.banner .banner-text {
+  max-width: 550px;
+  float: left;
+}
+.banner .banner-text h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+.banner .banner-text p {
+  color: #ffffff;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+.banner button {
+  border: 0;
+  border-radius: 50px;
+  padding: 0.75rem 2.75rem;
+  background: #ffffff;
+  color: #000000;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  position: relative;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  transition: all 0.3s ease-in-out;
+}
+.banner button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.25);
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.card {
+  padding: 16px 24px;
+  background: #ffffff;
+  height: 100%;
+  position: relative;
+  border: none;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+}
+.card h3.card-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #000000;
+}
+.card p {
+  color: #6d6d6d;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 72px;
+}
+.card .card-link {
+  position: absolute;
+  bottom: 18px;
+}
+.card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.card .card-icon {
+  width: 60px;
+  margin-bottom: 8px;
+  position: relative;
+  top: 0;
+  left: -12px;
+}
+
+footer {
+  background: #333333;
+  margin: 32px 0 0px;
+  padding: 32px 0;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+footer ul li {
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" data-new-gr-c-s-check-loaded="14.1020.0" data-gr-ext-installed="">
+  <nav>
+  <div class="logo">
+    <div class="arrow-down"></div>
+  </div>
+  <ul>
+    <li>Services</li>
+    <li>Products</li>
+    <li>FAQs</li>
+    <li>Contact</li>
+  </ul>
+</nav>
+<section class="banner">
+  <div class="container">
+    <div class="banner-text">
+      <h1>Manage</h1>
+      <p><strong>We make it easy to get the most out of your virtual machine.</strong> Our tools make it simple to track how your Droplets are performing and help you to respond quickly if there is a problem</p>
+      <button>Sign Up</button>
+    </div>
+  </div>
+  
+</section>
+
+<div class="container">
+  <div class="row">
+    <div class="mb-30 col-md-6 col-lg-4">
+      <div class="card">
+      <h3 class="card-title">Monitoring</h3>
+      <p class="card-text">Collect metrics on visibility, monitor Droplet performance and receive alerts when problems arise in your infrastructure–at no additional cost.</p>
+      <a class="card-link" href="#">Learn more</a>
+      </div>
+    </div>
+    <div class="mb-30 col-md-6 col-lg-4">
+      <div class="card">
+      <h3 class="card-title">Cloud Firewalls</h3>
+      <p class="card-text">Perfect for both staging and production deployments, cloud firewalls let you easily secure your infrastructure and define what services are visible on your Droplets–at no additional cost.</p>
+      <a class="card-link" href="#">Learn more</a>
+      </div>
+    </div>
+    <div class="mb-30 col-md-6 col-lg-4">
+      <div class="card">
+      <h3 class="card-title">Team Management</h3>
+      <p class="card-text">With Digital Teams you can invite and manage users, ensure security with two-factor authentication, and control your resource spend with centralized billing–at no additional cost.</p>
+      <a class="card-link" href="#">Learn more</a>
+      </div>
+    </div>
+    <div class="mb-30 col-md-6 col-lg-4">
+      <div class="card">
+      <h3 class="card-title">Backups</h3>
+      <p class="card-text">Backups run automatically on your Droplets each week and are stored for four weeks–add 20% of monthly Droplet cost.</p>
+      <a class="card-link" href="#">Learn more</a>
+      </div>
+    </div>
+    <div class="mb-30 col-md-6 col-lg-4">
+      <div class="card">
+      <h3 class="card-title">Snapshots</h3>
+      <p class="card-text">Scale out your system effortlessly. Just take a snapshot of an existing server, then spin up a new Droplet from the snapshot–add $0.05 per gigabyte per month.</p>
+      <a class="card-link" href="#">Learn more</a>
+      </div>
+    </div>
+    <div class="mb-30 col-md-6 col-lg-4">
+      <div class="card">
+      <h3 class="card-title">Monitoring</h3>
+      <p class="card-text">Collect metrics on visibility, monitor Droplet performance and receive alerts when problems arise in your infrastructure–at no additional cost.</p>
+      <a class="card-link" href="#">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <ul>
+        <li>Footer Link</li>
+        <li>Footer Link</li>
+        <li>Footer Link</li>
+        <li>Footer Link</li>
+        <li>Footer Link</li>
+        <li>Footer Link</li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul>
+        <li>Footer Link</li>
+        <li>Footer Link</li>
+        <li>Footer Link</li>
+        <li>Footer Link</li>
+        <li>Footer Link</li>
+        <li>Footer Link</li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <ul>
+        <li>Footer Link</li>
+        <li>Footer Link</li>
+        <li>Footer Link</li>
+        <li>Footer Link</li>
+        <li>Footer Link</li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</footer>
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
